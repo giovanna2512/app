@@ -1,17 +1,17 @@
-let meta = {
-    value: "estudar 1h por dia",
-    checked: false,
-}
-
-let metas= [
-    meta,
-    { 
-        value: "fazer exercício todos os dias",
-        checked: false
+const start = () => {
+    while (true) {
+        let (opcao)="sair" 
+        switch(opcao){
+            case "cadastrar":
+                console.log("Vamos cadastrar")
+                break
+            case "listar":
+                console.log("vamos listar")
+                break
+            case "sair":
+                return        
+        }
+        
     }
-]
- 
-
-
-console.log (meta.value)
-
+}
+start()
