@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "value": "Tomar 5l de água por dia",
+    "checked": false
+  },
+  {
+    "value": "Andar 20min todos os dias!",
+    "checked": false
+  },
+  {
+    "value": "Aprender uma linguagem de programação nova!",
+    "checked": false
+  }
+]

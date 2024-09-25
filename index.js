@@ -4,18 +4,16 @@ const fs = require ("fs").promises
 
 let mensagem= "Bem vindo ao App de metas..."
 
-let metas = []
+let metas
 
 const carregarMetas = async () => {
     try{
         const dados = await fs.readFile("metas.json", "utf-8")
-        metas= JSON.parse(dados)
-        console.log('opa baum',metas)
+        metas = JSON.parse(dados)
     }
     catch(error){
-        console.log(error)
+        metas = []
     }
-    metas = []
 }
 
 const salvarMetas = async() =>{
@@ -41,6 +39,10 @@ const cadastrarMeta = async () => {
 
 const listarMeta = async ()=>{
         console.log(metas)
+    if (metas.length == 0){
+        mensagem= "Não tem nenhuma meta cadastrada ainda"
+        return
+    }
     const respostas = await checkbox ({
         message: " Use as setas para mudar de meta, o espaço para marcar/desmarcar e o enter para finalizar essa etapa",
         choices: [...metas], 
